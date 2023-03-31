@@ -1,0 +1,416 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Customer Details</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addCustomer"
+                    type="submit" data-bs-dismiss="modal">Add Customer
+                </button>
+            </div>
+        </div>
+    </nav>
+
+  
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Customer ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">DateofBirth</th>
+                <th scope="col">PhoneNumber</th>
+                <th scope="col">Address</th>
+                <!-- <th scope="col">Address1</th>
+                <th scope="col">Address2</th> -->
+                <th scope="col">City</th>
+                <!-- <th scope="col">State</th> -->
+                <th scope="col">Country</th>
+                <th scope="col">ZipCode</th>
+                <th scope="col">Marital Status</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let customer of CustomerDetails">
+                <!-- <td scope="row">1</td> -->
+                <td>{{customer.CustomerID}}</td>
+                <td>{{customer.Name}}</td>
+                <td>{{customer.Email}}</td>
+                <td>{{customer.DateOfBirth}}</td>
+                <td>{{customer.PhoneNumber}}</td>
+                <td>{{customer.Address1}},{{customer.Address2}}</td>
+                <!-- <td>M.I.G 40/2, H.B.Colony</td>
+                <td>Bhavanipuram</td> -->
+                <td>{{customer.City}},{{customer.State}}</td>
+                <td>{{customer.Country}}</td> 
+                <td>{{customer.ZipCode}}</td>  
+                <td>{{customer.MaritalStatus}}</td> 
+
+                <td>
+                    <button type="button" class="bi bi-pencil-fill" data-bs-toggle="modal"
+                        data-bs-target="#editCustomer" > 
+                    </button>
+
+                    <button type="button" class="bi bi-trash-fill" data-bs-toggle="modal" 
+                       data-bs-target="#DeleteCustomer">
+                    </button>
+                    
+                    <button type="button" class="bi bi-eye-fill" data-bs-toggle="modal" 
+                       data-bs-target="#DetailsCustomer">
+                    </button>
+                </td>
+            </tr>  
+
+           <!-- <tr>
+                <th scope="row">2</th>
+                <td>Navya</td>
+                <td>Navya@gmail.com</td>
+                <td>13/09/1998</td>
+                <td>1234567800</td>
+                <td>H.I.G 80/3/12, Singanagar</td>
+                <td>Madhapur</td>
+                <td>Hyderabad</td>
+                <td>Telangana</td>
+                <td>India</td>
+                <td>520521</td>
+                <td>Single</td>
+                
+                <td>
+                    <button type="button" class="bi bi-pencil-fill" data-bs-toggle="modal"
+                        data-bs-target="#editCustomer" > 
+                    </button>
+
+                    <button type="button" class="bi bi-trash-fill" data-bs-toggle="modal" 
+                    data-bs-target="#DeleteCustomer">
+                    </button>
+
+                    <button type="button" class="bi bi-eye-fill" data-bs-toggle="modal" 
+                    data-bs-target="#DetailsCustomer">
+                    </button>
+                </td>
+            </tr>  -->
+
+            <!-- <tr>
+                <th scope="row">3</th>
+                <td>Alexa</td>
+                <td>Alexa@gmail.com</td>
+                <td>19/12/2008</td>
+                <td>9987612340</td>
+                <td>ward no-9, tumkur</td>
+                <td>Hillcity</td>
+                <td>Bangalore</td>
+                <td>Karnataka</td>
+                <td>India</td>
+                <td>520543</td>
+                <td>Married</td>
+                
+                <td>
+                    <button type="button" class="bi bi-pencil-fill" data-bs-toggle="modal"
+                        data-bs-target="#editCustomer" > 
+                    </button>
+
+                    <button type="button" class="bi bi-trash-fill" data-bs-toggle="modal" 
+                    data-bs-target="#DeleteCustomer">
+                    </button>
+
+                    <button type="button" class="bi bi-eye-fill" data-bs-toggle="modal" 
+                    data-bs-target="#DetailsCustomer">
+                    </button>
+                </td>
+            </tr>  -->
+
+            <!-- <tr>
+                <th scope="row">4</th>
+                <td>Maya</td>
+                <td>maya@gmail.com</td>
+                <td>01/01/2001</td>
+                <td>9980012440</td>
+                <td>abc-12/54, Phoneix</td>
+                <td>Garden Grove</td>
+                <td>Agra</td>
+                <td>UttarPradesh</td>
+                <td>India</td>
+                <td>345521</td>
+                <td>Single</td>
+                
+                <td>
+                    <button type="button" class="bi bi-pencil-fill" data-bs-toggle="modal"
+                        data-bs-target="#editCustomer" > 
+                    </button>
+
+                    <button type="button" class="bi bi-trash-fill" data-bs-toggle="modal" 
+                    data-bs-target="#DeleteCustomer">
+                    </button>
+
+                    <button type="button" class="bi bi-eye-fill" data-bs-toggle="modal" 
+                    data-bs-target="#DetailsCustomer">
+                    </button>
+                </td>
+            </tr>  -->
+
+            <!-- <tr>
+                <th scope="row">5</th>
+                <td>Sri</td>
+                <td>sri@gmail.com</td>
+                <td>21/12/1985</td>
+                <td>9988877331</td>
+                <td>L.I.G 56/3, straight way</td>
+                <td>xyz1</td>
+                <td>Ahmedabad</td>
+                <td>Gujarat</td>
+                <td>India</td>
+                <td>765521</td>
+                <td>Married</td>
+                
+                <td>
+                    <button type="button" class="bi bi-pencil-fill" data-bs-toggle="modal"
+                        data-bs-target="#editCustomer" > 
+                    </button>
+
+                    <button type="button" class="bi bi-trash-fill" data-bs-toggle="modal" 
+                    data-bs-target="#DeleteCustomer">
+                    </button>
+
+                    <button type="button" class="bi bi-eye-fill" data-bs-toggle="modal" 
+                    data-bs-target="#DetailsCustomer">
+                    </button>
+                </td>
+            </tr>  -->
+
+            <!-- <tr> 
+                <th scope="row">6</th>
+                <td>Jessi</td>
+                <td>jessi@gmail.com</td>
+                <td>14/08/2014</td>
+                <td>9952342340</td>
+                <td>XYZ 40/2/31, Douglas</td>
+                <td>southampton</td>
+                <td>Arizona</td>
+                <td>Cleveland</td>
+                <td>US</td>
+                <td>527777</td>
+                <td>Married</td>
+                
+                <td>
+                    <button type="button" class="bi bi-pencil-fill" data-bs-toggle="modal"
+                        data-bs-target="#editCustomer" > 
+                    </button>
+
+                    <button type="button" class="bi bi-trash-fill" data-bs-toggle="modal" 
+                    data-bs-target="#DeleteCustomer">
+                    </button>
+                   
+                    <button type="button" class="bi bi-eye-fill" data-bs-toggle="modal" 
+                    data-bs-target="#DetailsCustomer">
+                    </button>
+                </td>
+            </tr>  -->
+
+         <!-- </tbody>  -->
+    </table> 
+
+
+
+     **Add Customer**
+    <div class="modal fade" id="addCustomer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Add Customer Details
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="CustomerDetail">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="customerID" id="customerID"
+                                aria-describedby="emailHelp" />
+                            <label for="exampleInputEmail1" class="form-label">Customer ID</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="Name" id="Name"
+                                aria-describedby="emailHelp" />
+                            <label for="exampleInputEmail1" class="form-label">Name</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="PhoneNumber" id="PhoneNumber"
+                                aria-describedby="emailHelp" />
+                            <label for="exampleInputEmail1" class="form-label">PhoneNumber</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="email" id="email"
+                                aria-describedby="emailHelp" />
+                            <label for="exampleInputEmail1" class="form-label">email</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="dob" id="dob"
+                                aria-describedby="emailHelp" />
+                            <label for="exampleInputEmail1" class="form-label">DOB</label>
+                       </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="city" id="city"
+                                aria-describedby="emailHelp" />
+                            <label for="exampleInputEmail1" class="form-label">City</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="state" id="state"
+                                aria-describedby="emailHelp" />
+                            <label for="exampleInputEmail1" class="form-label">State</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="country" id="country"
+                                aria-describedby="emailHelp" />
+                            <label for="exampleInputEmail1" class="form-label">Country</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="address1" id="address1"
+                                aria-describedby="emailHelp" />
+                            <label for="exampleInputEmail1" class="form-label">Address1</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="address2" id="address2"
+                                aria-describedby="emailHelp" />
+                            <label for="exampleInputEmail1" class="form-label">Address2</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="Zipcode" id="Zipcode"
+                                aria-describedby="emailHelp" />
+                            <label for="exampleInputEmail1" class="form-label">Zipcode</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="MaritalStatus" id="MaritalStatus"
+                                aria-describedby="emailHelp" />
+                            <label for="exampleInputEmail1" class="form-label">MaritalStatus</label>
+                       </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Close </button>
+                            <button type="button" class="btn btn-primary" (click)="addCustomer()"> Add Customer
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <!-- Edit Customer Modal -->
+    <!-- <div class="modal fade" id="editCustomer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Edit Customer Details
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="CustomerDetail">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Customer ID</label>
+                            <input type="text" class="form-control" formControlName="customerID" id="customerID"
+                                aria-describedby="emailHelp" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Name</label>
+                            <input type="text" class="form-control" formControlName="Name" id="Name"
+                                aria-describedby="emailHelp" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">PhoneNumber</label>
+                            <input type="text" class="form-control" formControlName="PhoneNumber" id="PhoneNumber"
+                                aria-describedby="emailHelp" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input type="text" class="form-control" formControlName="email" id="email"
+                                aria-describedby="emailHelp" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">DOB</label>
+                            <input type="text" class="form-control" formControlName="dob" id="dob"
+                                aria-describedby="emailHelp" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">City</label>
+                            <input type="text" class="form-control" formControlName="city" id="city"
+                                aria-describedby="emailHelp" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">State</label>
+                            <input type="text" class="form-control" formControlName="state" id="state"
+                                aria-describedby="emailHelp" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Country</label>
+                            <input type="text" class="form-control" formControlName="country" id="country"
+                                aria-describedby="emailHelp" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Address1</label>
+                            <input type="text" class="form-control" formControlName="address1" id="address1"
+                                aria-describedby="emailHelp" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Address2</label>
+                            <input type="text" class="form-control" formControlName="address2" id="address2"
+                                aria-describedby="emailHelp" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">ZipCode</label>
+                            <input type="text" class="form-control" formControlName="zipcode" id="zipcode"
+                                aria-describedby="emailHelp" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">MaritalStatus</label>
+                            <input type="text" class="form-control" formControlName="maritalstatus" id="maritalstatus"
+                                aria-describedby="emailHelp" />
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                Close
+                            </button>
+                            <button type="button" class="btn btn-outline-success" (click)="updateCustomer()"
+                                data-bs-dismiss="modal">
+                                Update
+                            </button>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
